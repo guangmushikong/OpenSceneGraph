@@ -2201,10 +2201,13 @@ void Texture::applyTexImage2D_load(State& state, GLenum target, const Image* ima
 #ifdef DO_TIMING
         OSG_NOTICE<<"after PBO "<<osg::Timer::instance()->delta_m(start_tick,osg::Timer::instance()->tick())<<"ms"<<std::endl;
 #endif
+
+        OSG_NOTICE<<"Texture::applyTexImage2D_load() called state.bindPixelBufferObject("<<pbo<<")"<<std::endl;
     }
     else
     {
         pbo = 0;
+        OSG_NOTICE<<"Texture::applyTexImage2D_load() no PixelBufferObject used."<<std::endl;
     }
 #if !defined(OSG_GLES1_AVAILABLE) && !defined(OSG_GLES2_AVAILABLE) && !defined(OSG_GLES3_AVAILABLE)
     glPixelStorei(GL_UNPACK_ROW_LENGTH,rowLength);
@@ -2547,10 +2550,12 @@ void Texture::applyTexImage2D_subload(State& state, GLenum target, const Image* 
 #ifdef DO_TIMING
         OSG_NOTICE<<"after PBO "<<osg::Timer::instance()->delta_m(start_tick,osg::Timer::instance()->tick())<<"ms"<<std::endl;
 #endif
+        OSG_NOTICE<<"Texture::applyTexImage2D_subload() called state.bindPixelBufferObject("<<pbo<<")"<<std::endl;
     }
     else
     {
         pbo = 0;
+        OSG_NOTICE<<"Texture::applyTexImage2D_subload() no PixelBufferObject used."<<std::endl;
     }
 #if !defined(OSG_GLES1_AVAILABLE) && !defined(OSG_GLES2_AVAILABLE) && !defined(OSG_GLES3_AVAILABLE)
     glPixelStorei(GL_UNPACK_ROW_LENGTH,rowLength);
