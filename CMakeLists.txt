@@ -535,7 +535,7 @@ ELSE()
 ENDIF()
 
 IF (OSG_GLES1_AVAILABLE OR OSG_GLES2_AVAILABLE OR OSG_GLES3_AVAILABLE)
-    OPTION(OSG_CPP_EXCEPTIONS_AVAILABLE "Set to OFF to disable compile of OSG components that use C++ exceptions." OFF)
+    OPTION(OSG_CPP_EXCEPTIONS_AVAILABLE "Set to OFF to disable compile of OSG components that use C++ exceptions." ON)
 ELSE()
     OPTION(OSG_CPP_EXCEPTIONS_AVAILABLE "Set to OFF to disable compile of OSG components that use C++ exceptions." ON)
 ENDIF()
