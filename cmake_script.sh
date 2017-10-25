@@ -1,4 +1,5 @@
 export THIRDPARTY_PATH=/Users/cateye/release/3rdParty
+export IPHONE_SDK_USR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr
 /Applications/CMake.app/Contents/bin/cmake ./ -G Xcode -DOSG_BUILD_PLATFORM_IPHONE:BOOL=ON \
 -DIPHONE_SDKVER="10.3" \
 -DIPHONE_VERSION_MIN="8.0" \
@@ -19,6 +20,8 @@ export THIRDPARTY_PATH=/Users/cateye/release/3rdParty
 -DOSG_GL_VERTEX_FUNCS_AVAILABLE:BOOL=OFF \
 -DDYNAMIC_OPENSCENEGRAPH:BOOL=OFF \
 -DDYNAMIC_OPENTHREADS:BOOL=OFF \
+-DZLIB_INCLUDE_DIR:PATH="$IPHONE_SDK_USR/include" \
+-DZLIB_LIBRARY:PATH="$IPHONE_SDK_USR/lib/libz.tbd" \
 -DCURL_INCLUDE_DIR:PATH="$THIRDPARTY_PATH/curl-ios-device/include" \
 -DCURL_LIBRARY:PATH="$THIRDPARTY_PATH/curl-ios-device/lib/libcurl.a" \
 -DFREETYPE_INCLUDE_DIR_freetype2:PATH="$THIRDPARTY_PATH/freetype-ios-universal/include/freetype" \
