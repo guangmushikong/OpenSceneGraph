@@ -1,13 +1,26 @@
-export THIRDPARTY_PATH=/Users/cateye/release/3rdParty
+#  
+#  cmake_script.sh
+#  cmake脚本文件(cmake 版本推荐3.0）
+#  Created by wangmiao on 17/11/7
+#  Copyright (c) 2017年 cateye All rights reserved.
+#  调整THIRDPARTY_PATH 用于移动盘路径      by  涂理根  17/11/7
+#  调整ES2 与 ES3 开关 解决GLSL版本获取不准 by  涂理根  17/11/7
+
+export THIRDPARTY_PATH=/Volumes/mac/Cateye/3rdParty
 export IPHONE_SDK_USR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr
 /Applications/CMake.app/Contents/bin/cmake ./ -G Xcode -DOSG_BUILD_PLATFORM_IPHONE:BOOL=ON \
--DIPHONE_SDKVER="10.3" \
+-DIPHONE_SDKVER="10.2" \
 -DIPHONE_VERSION_MIN="8.0" \
 -DOPENGL_PROFILE:STRING=GLES3 \
 -DBUILD_OSG_APPLICATIONS:BOOL=OFF \
 -DBUILD_OSG_EXAMPLES:BOOL=ON \
 -DOSG_WINDOWING_SYSTEM:STRING=IOS \
 -DOSG_DEFAULT_IMAGE_PLUGIN_FOR_OSX="imageio" \
+-DOSG_GL1_AVAILABLE:BOOL=OFF \
+-DOSG_GL2_AVAILABLE:BOOL=OFF \
+-DOSG_GLES1_AVAILABLE:BOOL=OFF \
+-DOSG_GLES2_AVAILABLE:BOOL=OFF \
+-DOSG_GLES3_AVAILABLE:BOOL=ON \
 -DDYNAMIC_OPENSCENEGRAPH:BOOL=OFF \
 -DDYNAMIC_OPENTHREADS:BOOL=OFF \
 -DZLIB_INCLUDE_DIR:PATH="$IPHONE_SDK_USR/include" \
